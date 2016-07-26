@@ -10,7 +10,7 @@ import com.woleszczak.hibernate.model.Employee;
  * Hello world!
  *
  */
-public class App 
+public class Basic 
 {
     public static void main( String[] args )
     {

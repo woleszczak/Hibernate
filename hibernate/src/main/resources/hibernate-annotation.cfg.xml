@@ -18,5 +18,7 @@
 		
 		<!-- Mapping with model class containing annotations -->
 		<mapping class="com.woleszczak.hibernate.model.Employee"/>
+		<mapping class="com.woleszczak.hibernate.model.Customer"/>
+		<mapping class="com.woleszczak.hibernate.model.Txn"/>
 	</session-factory>
 </hibernate-configuration>

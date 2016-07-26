@@ -20,5 +20,7 @@
 		<mapping class="com.woleszczak.hibernate.model.Employee"/>
 		<mapping class="com.woleszczak.hibernate.model.Customer"/>
 		<mapping class="com.woleszczak.hibernate.model.Txn"/>
+		<mapping class="com.woleszczak.hibernate.model.Cart"/>
+        <mapping class="com.woleszczak.hibernate.model.Items"/>
 	</session-factory>
 </hibernate-configuration>

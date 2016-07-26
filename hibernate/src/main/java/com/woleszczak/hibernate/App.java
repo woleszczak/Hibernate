@@ -15,8 +15,8 @@ public class App
     public static void main( String[] args )
     {
 		Employee emp = new Employee();
-		emp.setName("Wojtek");
-		emp.setRole("CTO");
+		emp.setName("Rafał");
+		emp.setRole("CEO");
 		emp.setInsertTime(new Date());
 		
 		//Get Session

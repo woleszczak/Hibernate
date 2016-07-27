@@ -2,6 +2,7 @@ package com.woleszczak.hibernate;
 
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -19,6 +20,9 @@ public class HibernateUtil {
 	
 	//Property based configuration
 	private static SessionFactory sessionJavaConfigFactory;
+	
+    private static Logger logger = Logger.getLogger(HibernateUtil.class);
+
 
     private static SessionFactory buildSessionFactory() {
         try {
@@ -46,10 +50,10 @@ public class HibernateUtil {
             // Create the SessionFactory from hibernate.cfg.xml
         	Configuration configuration = new Configuration();
         	configuration.configure("hibernate-annotation.cfg.xml");
-        	System.out.println("Hibernate Annotation Configuration loaded");
+        	logger.info("Hibernate Annotation Configuration loaded");
         	
         	ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
-        	System.out.println("Hibernate Annotation serviceRegistry created");
+        	logger.info("Hibernate Annotation serviceRegistry created");
         	
         	SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
         	
@@ -57,7 +61,7 @@ public class HibernateUtil {
         }
         catch (Throwable ex) {
             // Make sure you log the exception, as it might be swallowed
-            System.err.println("Initial SessionFactory creation failed." + ex);
+        	logger.error("Initial SessionFactory creation failed." + ex);
             throw new ExceptionInInitializerError(ex);
         }
 	}

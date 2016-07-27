@@ -63,4 +63,8 @@ public class Employee {
 		this.insertTime = insertTime;
 	}
 	
+	@Override
+	public String toString() {
+		return "Id= " + id + ", Name= " + name + ", Role= " + role;
+	}
 }

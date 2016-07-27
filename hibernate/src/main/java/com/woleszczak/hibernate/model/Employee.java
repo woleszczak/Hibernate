@@ -14,6 +14,9 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 @Entity
 @Table(name="Employee", 
 	   uniqueConstraints={@UniqueConstraint(columnNames={"ID"})})
@@ -22,6 +25,7 @@ query = "from Employee")/*, @NamedQuery(name = "@HQL_GET_Employee_BY_ID",
 		query = "from Employee where id=:id")*/ })
 @NamedNativeQueries({ @NamedNativeQuery(name = "@SQL_GET_ALL_Employee", 
 query = "select id, name, role, insert_time from Employee") })
+@Cache(usage=CacheConcurrencyStrategy.READ_ONLY, region="employee")
 public class Employee {
 
 	@Id

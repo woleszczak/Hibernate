@@ -13,6 +13,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -34,6 +36,8 @@ public class Employee {
 	private int id;
 	
 	@Column(name="NAME", length=20, nullable=true)
+	@NotNull(message="Name cannot be null")
+	@Size(min=5, max=30)
 	private String name;
 	
 	@Column(name="ROLE", length=20, nullable=true)

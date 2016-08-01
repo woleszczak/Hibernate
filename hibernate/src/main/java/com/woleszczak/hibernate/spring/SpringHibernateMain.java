@@ -18,11 +18,11 @@ public class SpringHibernateMain {
 		Person person = new Person();
 		person.setName("Wojtek"); person.setCountry("Poland");
 		
-		personDAO.save(person);
+		personDAO.addPerson(person);
 		
 		System.out.println("Person::"+person);
 		
-		List<Person> list = personDAO.list();
+		List<Person> list = personDAO.listPersons();
 		
 		for(Person p : list){
 			System.out.println("Person List::"+p);
